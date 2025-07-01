@@ -1,34 +1,26 @@
-# main.py
-
-from operacoes import soma, subtracao, multiplicacao, divisao
-from utils import exibir_resultado
+from minhasoperacoes import operacoes
+from minhasoperacoes import utils
 
 def main():
-    print("Calculadora Básica")
-    print("Operações disponíveis: +  -  *  /")
-    operacao = input("Escolha a operação: ")
+    print("Escolha uma operação: +, -, *, /")
+    operacao = input("Operação: ")
 
-    if operacao not in ['+', '-', '*', '/']:
-        print("Operação inválida.")
-        return
-
-    try:
-        a = float(input("Digite o primeiro número: "))
-        b = float(input("Digite o segundo número: "))
-    except ValueError:
-        print("Entrada inválida. Digite números válidos.")
-        return
+    a = float(input("Digite o primeiro número: "))
+    b = float(input("Digite o segundo número: "))
 
     if operacao == '+':
-        resultado = soma(a, b)
+        resultado = operacoes.soma(a, b)
     elif operacao == '-':
-        resultado = subtracao(a, b)
+        resultado = operacoes.subtracao(a, b)
     elif operacao == '*':
-        resultado = multiplicacao(a, b)
+        resultado = operacoes.multiplicacao(a, b)
     elif operacao == '/':
-        resultado = divisao(a, b)
+        resultado = operacoes.divisao(a, b)
+    else:
+        print("Operação inválida")
+        return
 
-    exibir_resultado(operacao, resultado)
+    utils.exibir_resultado(operacao, resultado)
 
 if __name__ == "__main__":
     main()

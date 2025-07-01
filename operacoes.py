@@ -9,5 +9,5 @@ def multiplicacao(a, b):
 
 def divisao(a, b):
     if b == 0:
-        return "Erro: Divisão por zero não é permitida."
+        return "Erro: divisão por zero"
     return a / b
